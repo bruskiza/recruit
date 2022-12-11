@@ -41,7 +41,7 @@ class Job(models.Model):
 	compensation_terms = models.CharField(max_length=250)
 	is_featured = models.BooleanField(default=False)
 	is_active = models.BooleanField(default=True)
-	recruiter = models.ForeignKey(Recruiter, related_name='jobs')
+	recruiter = models.ForeignKey(Recruiter, related_name='jobs', on_delete=models.CASCADE)
 	last_modified = models.DateTimeField(auto_now_add=False, auto_now=True)
 	created = models.DateTimeField(auto_now_add=True, auto_now=False)
 

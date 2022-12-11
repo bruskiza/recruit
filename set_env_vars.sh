@@ -1,0 +1,6 @@
+export SECRET_KEY=foo
+export AWS_ACCESS_KEY_ID=foo
+export AWS_STORAGE_BUCKET_NAME=recruit
+export SENDGRID_PASSWORD=foo
+export AWS_SECRET_ACCESS_KEY=foo
+export SENDGRID_USER=foo

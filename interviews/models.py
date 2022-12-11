@@ -21,8 +21,8 @@ class InterviewInvitation(models.Model):
 		max_length=5,
 		default=shortuuid.ShortUUID().random(length=5).upper(),
 		)
-	candidate = models.ForeignKey(Candidate)
-	job = models.ForeignKey(Job)
+	candidate = models.ForeignKey(Candidate, on_delete=models.CASCADE)
+	job = models.ForeignKey(Job, on_delete=models.CASCADE)
 	confirmed_time = models.DateTimeField(null=True, blank=True)
 	status = models.IntegerField(choices=STATUS_CHOICES, default=0)
 	request_reminders_sent = models.IntegerField(default=0)
@@ -36,10 +36,10 @@ class InterviewInvitation(models.Model):
 		return '<Interview C: %s B: %s>' % (self.candidate.user.email, self.job.title)
 
 class InterviewRequest(models.Model):
-	candidate = models.ForeignKey(Candidate, related_name='requested_jobs')
-	job = models.ForeignKey(Job, related_name='requested_candidates')
-	candidate_accepted = models.NullBooleanField()
-	employer_accepted = models.NullBooleanField()
+	candidate = models.ForeignKey(Candidate, related_name='requested_jobs', on_delete=models.CASCADE)
+	job = models.ForeignKey(Job, related_name='requested_candidates', on_delete=models.CASCADE)
+	candidate_accepted = models.BooleanField(null=True, default=False)
+	employer_accepted = models.BooleanField(null=True, default=False)
 	last_modified = models.DateTimeField(auto_now_add=False, auto_now=True)
 	created = models.DateTimeField(auto_now_add=True, auto_now=False)
 
