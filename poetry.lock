@@ -383,6 +383,14 @@ certs = ["certifi (==2016.9.26)"]
 ssl = ["wincertstore (==0.2)"]
 
 [[package]]
+name = "shortuuid"
+version = "1.0.11"
+description = "A generator library for concise, unambiguous and URL-safe UUIDs."
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[[package]]
 name = "simplegeneric"
 version = "0.8.1"
 description = "Simple generic functions (similar to Python's own len(), pickle.dump(), etc.)"
@@ -438,7 +446,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "998d0c87e9355db78a436a0ab64c6e85aba7aff5b31a9b93dcc92c2ea114bd78"
+content-hash = "785a22f0170d42ed50e6abad4c0e94dae09e20db0bede72f4fee841420a112ae"
 
 [metadata.files]
 asgiref = [
@@ -718,6 +726,10 @@ s3transfer = [
 setuptools = [
     {file = "setuptools-39.1.0-py2.py3-none-any.whl", hash = "sha256:0cb8b8625bfdcc2d43ea4b9cdba0b39b2b7befc04f3088897031082aa16ce186"},
     {file = "setuptools-39.1.0.zip", hash = "sha256:c5484e13b89927b44fd15897f7ce19dded8e7f035466a4fa7b946c0bdd86edd7"},
+]
+shortuuid = [
+    {file = "shortuuid-1.0.11-py3-none-any.whl", hash = "sha256:27ea8f28b1bd0bf8f15057a3ece57275d2059d2b0bb02854f02189962c13b6aa"},
+    {file = "shortuuid-1.0.11.tar.gz", hash = "sha256:fc75f2615914815a8e4cb1501b3a513745cb66ef0fd5fc6fb9f8c3fa3481f789"},
 ]
 simplegeneric = [
     {file = "simplegeneric-0.8.1.zip", hash = "sha256:dc972e06094b9af5b855b3df4a646395e43d1c9d0d39ed345b7393560d0b9173"},

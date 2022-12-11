@@ -11,9 +11,12 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+import logging as log
+from pathlib import Path
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+print(Path.cwd())
+BASE_DIR = Path.cwd()
 
 
 # Quick-start development settings - unsuitable for production
@@ -56,13 +59,13 @@ INSTALLED_APPS = [
     'dashboards',
 ]
 
-MIDDLEWARE_CLASSES = [
+MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+    # 'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -144,12 +147,12 @@ USE_TZ = True
 # STATIC_URL = '/static/'
 # MEDIA_URL = '/media/'
 
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static", "media")
+MEDIA_ROOT = f"{BASE_DIR}/static/media"
 
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static", "static_root")
+STATIC_ROOT = f"{BASE_DIR}/static/static_root"
 
 STATICFILES_DIRS = (
-    os.path.join(os.path.dirname(BASE_DIR), "static", "static_files"),
+    f"{BASE_DIR}/static/static_files",
 )
 
 PHONENUMBER_DB_FORMAT = 'E164'
@@ -228,3 +231,5 @@ COUNTRIES_FIRST = [
     'NZ',
     'ZA'
 ]
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
